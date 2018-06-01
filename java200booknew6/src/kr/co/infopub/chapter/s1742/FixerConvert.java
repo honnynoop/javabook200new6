@@ -75,10 +75,11 @@ public class FixerConvert {
 	public static void main(String[] args) {
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 		Calendar cal=Calendar.getInstance();
-		String date="2018-04-10";
-		//String date=sdf.format(cal.getTime());
+		String date="2018-04-10";  //토일은 제외하고 입력
+		//String date=sdf.format(cal.getTime()); //토일은 제외
 		String base="USD";       
 		String fixerrate=conversion(date,base);
+		System.out.println(fixerrate);
 		try {
 			FixerRate frate=convert2(fixerrate, base);
 			System.out.println(frate);
